@@ -1,12 +1,14 @@
 # Pihulka Check — public pages
 
-The Pihulka Check privacy policy, in Ukrainian and English. GitHub Pages builds it
+The Pihulka Check privacy policy and support page, in Ukrainian and English. GitHub Pages builds it
 straight from `main` with Jekyll; there is no build step of our own.
 
 | Page | Source |
 | --- | --- |
 | `/uk/privacy/` | `uk/privacy.md` |
 | `/en/privacy/` | `en/privacy.md` |
+| `/uk/support/` | `uk/support.md` |
+| `/en/support/` | `en/support.md` |
 
 Links between pages are relative, so the site works on `<owner>.github.io/<repo>/`
 now and on our own domain later without changes.
@@ -23,6 +25,11 @@ now and on our own domain later without changes.
 - Section 5 lists every service that receives data. When the backend's services
   change, section 5 changes with them.
 - A change that touches health data needs consent again in the app.
+
+## Changing the support page
+
+The FAQ describes how the app behaves, so it changes with the app: button and
+section names, repeat defaults, the reset-code lifetime. Both languages together.
 
 ## Preview locally
 

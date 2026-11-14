@@ -30,7 +30,9 @@
     }
     .brand { font-weight: 600; color: var(--fg); text-decoration: none; }
     a { color: var(--accent); }
-    main { padding-bottom: 48px; }
+    main { padding-bottom: 32px; }
+    footer { max-width: 760px; margin: 0 auto; padding: 16px 16px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    footer a { color: var(--muted); }
     h1 { font-size: 1.75rem; line-height: 1.25; margin: 1.5rem 0 .5rem; }
     h2 { font-size: 1.3rem; line-height: 1.3; margin: 2.25rem 0 .75rem; }
     h3 { font-size: 1.1rem; margin: 1.75rem 0 .5rem; }
@@ -66,6 +68,10 @@
   <main>
 {{ content }}
   </main>
+  {% assign root = page.home | default: '../../' %}
+  <footer>
+    {% if page.lang == 'en' %}<a href="{{ root }}en/support/">Support</a> · <a href="{{ root }}en/privacy/">Privacy Policy</a>{% else %}<a href="{{ root }}uk/support/">Підтримка</a> · <a href="{{ root }}uk/privacy/">Політика конфіденційності</a>{% endif %} · <a href="mailto:pihulka.check@gmail.com">pihulka.check@gmail.com</a>
+  </footer>
   <script>
     // Column names for the phone layout above, which hides the header row.
     document.querySelectorAll('table').forEach(function (table) {
