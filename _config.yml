@@ -1,0 +1,14 @@
+title: Pihulka Check
+# Links between pages are relative, so the site works at any address:
+# <owner>.github.io/<repo>/ now, our own domain later.
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude:
+  - README.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
