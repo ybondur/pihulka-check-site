@@ -13,7 +13,7 @@ Pihulka Check reminds you to take your medications and repeats the reminder unti
 
 ## Contact us
 
-Write to **[pihulka.check@gmail.com](mailto:pihulka.check@gmail.com)** in English or Ukrainian.
+Write to **[{{ site.support_email }}](mailto:{{ site.support_email }})** in English or Ukrainian.
 
 If something isn't working, please include:
 
@@ -34,7 +34,7 @@ If something isn't working, please include:
 
 Respond to the reminder: mark the dose as taken, snooze it or skip it. Once you respond, the repeats for that dose stop.
 
-If you don't respond, the reminder repeats (by default every 10 minutes for an hour). After that, the dose is marked as missed with no response. You can change the repeat interval and duration in the app's settings, including for each medication separately.
+If you don't respond, the reminder repeats (by default once more, an hour later). After that, the dose is marked as missed with no response. You can change the repeat interval and duration in the app's settings, including for each medication separately.
 
 ### Do I need the internet?
 
