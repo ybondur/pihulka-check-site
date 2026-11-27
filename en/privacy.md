@@ -9,7 +9,7 @@ alt_label: Українська
 
 # Pihulka Check Privacy Policy
 
-Version of 14 November 2026 (`2026-11-14`)
+Version of {{ site.privacy_version_date.en }} (`{{ site.privacy_version }}`)
 
 ---
 
@@ -29,7 +29,7 @@ Pihulka Check is built and run by a small team of developers.
 
 The controller of your personal data, meaning the person responsible for it: **Yaroslav Bondur**, a private individual.
 
-For any question about your data, write to **pihulka.check@gmail.com**. We reply within 30 days.
+For any question about your data, write to **{{ site.support_email }}**. We reply within 30 days.
 
 ## 2. How the app works
 
@@ -104,14 +104,14 @@ Only services that do one specific job for us receive data:
 | --- | --- | --- |
 | **Hetzner Online GmbH** (Germany) | Runs the server in the EU that hosts our API and database | Stores all account data listed in section 3.2 |
 | **Brevo** (France) | Sends the email with your password reset code | Your email address and the one-time code. **The email contains no medication data** |
-| **Google** (Gmail) | The pihulka.check@gmail.com inbox you write to us at | Your message and the address you sent it from |
+| **Google** (Gmail) | The {{ site.support_email }} inbox you write to us at | Your message and the address you sent it from |
 | **Apple** | The App Store; crash reports, only if you've turned on "Share With App Developers" in iOS | What Apple collects under its own privacy policy. Apple receives none of your data from us |
 
 We disclose data to public authorities only when the law requires it, and only to the extent required.
 
 **Where your data is stored.** Our server and the service that sends our emails (Brevo) are located in the European Union. EU countries are parties to Council of Europe Convention No. 108 on the protection of personal data, so Ukrainian law recognises that they provide an adequate level of protection. We don't transfer your account data outside the EU.
 
-The exception is emails you send us at pihulka.check@gmail.com: Google stores them, including on servers outside the EU.
+The exception is emails you send us at {{ site.support_email }}: Google stores them, including on servers outside the EU.
 
 ## 6. How long we keep data
 
@@ -153,4 +153,4 @@ Pihulka Check isn't intended for children under 16. We don't knowingly collect t
 
 ## 10. Changes to this policy
 
-Each version is identified by a date (currently `2026-11-14`). We'll tell you about significant changes in the app. If a change concerns health data, we'll ask for your consent again.
+Each version is identified by a date (currently `{{ site.privacy_version }}`). We'll tell you about significant changes in the app. If a change concerns health data, we'll ask for your consent again.

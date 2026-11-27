@@ -70,7 +70,7 @@
   </main>
   {% assign root = page.home | default: '../../' %}
   <footer>
-    {% if page.lang == 'en' %}<a href="{{ root }}en/support/">Support</a> · <a href="{{ root }}en/privacy/">Privacy Policy</a>{% else %}<a href="{{ root }}uk/support/">Підтримка</a> · <a href="{{ root }}uk/privacy/">Політика конфіденційності</a>{% endif %} · <a href="mailto:pihulka.check@gmail.com">pihulka.check@gmail.com</a>
+    {% if page.lang == 'en' %}<a href="{{ root }}en/support/">Support</a> · <a href="{{ root }}en/privacy/">Privacy Policy</a>{% else %}<a href="{{ root }}uk/support/">Підтримка</a> · <a href="{{ root }}uk/privacy/">Політика конфіденційності</a>{% endif %} · <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a>
   </footer>
   <script>
     // Column names for the phone layout above, which hides the header row.
