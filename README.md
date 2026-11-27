@@ -47,10 +47,9 @@ new version).
 | The pages say | Where | In the code |
 | --- | --- | --- |
 | An unanswered reminder repeats once more, an hour later, by default | support, "How to stop the repeats" | `DEFAULT_REMINDER_SETTINGS` in pihulka-check-be `src/types/reminder-settings.ts` and pihulka-check-mobile `src/libs/settings/settings-store.ts` |
-| "Account" → "Delete account" removes the data from the server | support; privacy, summary and section 8 | Backend: `DELETE /users/me`. App: not built yet |
+| "Account" → "Delete account" removes the data from the server | support; privacy, summary and section 8 | Backend: `DELETE /users/me`. App: `deleteAccount` in pihulka-check-mobile `src/libs/authentication/session.ts` |
 | Signing in brings medications, schedules and history back; sync between phones | support; privacy, summary | Backend: `/sync/snapshot`. App: not built yet |
-| Signing out erases the data from the phone | privacy, section 4 | App: `signOut` in pihulka-check-mobile `src/libs/authentication/session.ts` clears medications, settings and the dose log |
-| After signing out, the data stays on the server and comes back on sign-in | privacy, section 4 | App: not built yet (no sync) |
+| Signing out leaves the data on the phone, and reminders keep working | privacy, section 4 | App: `signOut` in pihulka-check-mobile `src/libs/authentication/session.ts` only ends the session |
 | History older than 90 days loads from the server | privacy, section 4 | App: not built yet |
 | The reset code is valid for 15 minutes; sessions last 30 days | support; privacy, section 6 | pihulka-check-be `src/auth` |
 
