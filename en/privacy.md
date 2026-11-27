@@ -90,7 +90,7 @@ The app contains no third-party SDKs for analytics, advertising or crash reporti
 
 - Your medications, schedules, settings and the last 90 days of dose history are stored in the app's storage on your phone. Older history is loaded from the server when you open the History screen.
 - The key that keeps you signed in is stored in the iOS Keychain.
-- When you **sign out**, the app erases this data from your phone. It stays on the server and comes back when you sign in again.
+- When you **sign out**, this data stays on your phone and your reminders keep working. To remove it from the phone, delete the app.
 
 **Notifications on the lock screen.** The reminder text includes the medication name. If you don't want others to see it, go to Settings → Notifications → Show Previews in iOS and choose "When Unlocked".
 
