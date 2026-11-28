@@ -4,10 +4,10 @@ support_email: pihulka.check@gmail.com
 # The privacy policy's version: the date the app sends as `user_consent.version`
 # (pihulka-check-mobile `src/libs/authentication/legal.ts`). A new version is a
 # new date here, the same date in the app, and the words for it below.
-privacy_version: "2026-11-14"
+privacy_version: "2026-11-28"
 privacy_version_date:
-  uk: 14 листопада 2026 року
-  en: 14 November 2026
+  uk: 28 листопада 2026 року
+  en: 28 November 2026
 # Links between pages are relative, so the site works at any address:
 # <owner>.github.io/<repo>/ now, our own domain later.
 markdown: kramdown

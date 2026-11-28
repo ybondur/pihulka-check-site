@@ -18,6 +18,7 @@ Version of {{ site.privacy_version_date.en }} (`{{ site.privacy_version }}`)
 - **Without an account, everything stays on your phone.** We don't receive your medications, schedules or dose history.
 - **With an account, we keep a copy on our server**, so your schedule isn't lost when you reinstall the app or move to a new phone.
 - **Your phone schedules the reminders itself.** They work without the internet and without our server.
+- **Push notifications from the server only with an account and only if you allow notifications.** Expo (USA) and Apple deliver them. They contain no medication data.
 - **No ads, no analytics, no trackers.** We don't sell your data or share it with advertisers.
 - **You can delete your account in the app.** Your data is removed from the server immediately and from backups within 7 days.
 
@@ -36,7 +37,8 @@ For any question about your data, write to **{{ site.support_email }}**. We repl
 Pihulka Check reminds you to take your medications and repeats the reminder until you respond.
 
 - Reminders are local iOS notifications. Your phone schedules them itself, so they don't pass through our server or Apple's servers.
-- The server does only two things: backup and sync between your phones. Without an account, the app doesn't contact it.
+- The server is there for backup and sync between your phones. Without an account, the app doesn't contact it.
+- With an account, the server can send push notifications to your phones — for now only a test one that you ask for yourself. Your dose reminders don't depend on it.
 
 ## 3. What data we process
 
@@ -57,6 +59,7 @@ If you delete the app, this data is deleted with it.
 | **Schedules:** days, times, course start and end dates, repeat settings | Same | **Your explicit consent** |
 | **Dose history:** whether a dose was taken, skipped, snoozed or left unanswered; when, and in which time zone | History and adherence rate on all your phones | **Your explicit consent** |
 | **Reminder settings:** repeat interval and window, snooze length, sound | The same behaviour on all your phones | Performance of a contract |
+| **Push token** of the phone and its platform (iOS) — only if you're signed in and have allowed notifications | Sending push notifications to your phones | Performance of a contract |
 | **Consents:** which document you accepted, which version, when, and in which language | To prove that consent was given | Legal obligation |
 | **Sign-in security data:** hashes of session tokens, hash of the one-time password reset code | Account security | Legitimate interest (protecting your account) |
 
@@ -90,7 +93,7 @@ The app contains no third-party SDKs for analytics, advertising or crash reporti
 
 - Your medications, schedules, settings and the last 90 days of dose history are stored in the app's storage on your phone. Older history is loaded from the server when you open the History screen.
 - The key that keeps you signed in is stored in the iOS Keychain.
-- When you **sign out**, this data stays on your phone and your reminders keep working. To remove it from the phone, delete the app.
+- When you **sign out**, this data stays on your phone and your reminders keep working. To remove it from the phone, delete the app. We remove this phone's push token from the server when you sign out.
 
 **Notifications on the lock screen.** The reminder text includes the medication name. If you don't want others to see it, go to Settings → Notifications → Show Previews in iOS and choose "When Unlocked".
 
@@ -105,13 +108,17 @@ Only services that do one specific job for us receive data:
 | **Hetzner Online GmbH** (Germany) | Runs the server in the EU that hosts our API and database | Stores all account data listed in section 3.2 |
 | **Brevo** (France) | Sends the email with your password reset code | Your email address and the one-time code. **The email contains no medication data** |
 | **Google** (Gmail) | The {{ site.support_email }} inbox you write to us at | Your message and the address you sent it from |
-| **Apple** | The App Store; crash reports, only if you've turned on "Share With App Developers" in iOS | What Apple collects under its own privacy policy. Apple receives none of your data from us |
+| **Expo** (650 Industries, Inc., USA) | Passes push notifications from our server on to Apple | The phone's push token and the notification text. **Push notifications contain no medication data** |
+| **Apple** | The App Store; delivering push notifications (Apple Push Notification service); crash reports, only if you've turned on "Share With App Developers" in iOS | For push: the token and the notification text. Otherwise, what Apple collects under its own privacy policy |
 
 We disclose data to public authorities only when the law requires it, and only to the extent required.
 
 **Where your data is stored.** Our server and the service that sends our emails (Brevo) are located in the European Union. EU countries are parties to Council of Europe Convention No. 108 on the protection of personal data, so Ukrainian law recognises that they provide an adequate level of protection. We don't transfer your account data outside the EU.
 
-The exception is emails you send us at {{ site.support_email }}: Google stores them, including on servers outside the EU.
+The exceptions:
+
+- push notifications: the phone's push token and the notification text pass through Expo and Apple, including on servers in the USA;
+- emails you send us at {{ site.support_email }}: Google stores them, including on servers outside the EU.
 
 ## 6. How long we keep data
 
@@ -120,6 +127,7 @@ The exception is emails you send us at {{ site.support_email }}: Google stores t
 | Account data (section 3.2) | Until you delete your account |
 | Database backups | Taken daily; the 7 most recent are kept. Deleted data disappears from backups within 7 days |
 | Session tokens | 30 days from last use; expired tokens are deleted daily |
+| Push token | Until you sign out on that phone or delete your account; a token Apple no longer accepts is deleted at once |
 | Password reset code | Valid for 15 minutes; expired codes are deleted daily |
 | Server technical error log | Overwritten automatically when it reaches its size limit |
 
