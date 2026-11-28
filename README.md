@@ -52,6 +52,9 @@ new version).
 | Signing out leaves the data on the phone, and reminders keep working | privacy, section 4 | App: `signOut` in pihulka-check-mobile `src/libs/authentication/session.ts` only ends the session |
 | History older than 90 days loads from the server | privacy, section 4 | App: not built yet |
 | The reset code is valid for 15 minutes; sessions last 30 days | support; privacy, section 6 | pihulka-check-be `src/auth` |
+| Push only with an account and notifications allowed; signing out takes the phone's token off the server | privacy, summary, sections 2, 3.2, 4 | App: pihulka-check-mobile `src/libs/push`. Backend: `PUT` / `DELETE /notifications/devices` |
+| Push carries no medication data; the only push today is the test one the person asks for | privacy, summary, sections 2 and 5 | Backend: `POST /notifications/test` is the only sender, with a fixed text (`TEST_PUSH`) |
+| A push token Apple no longer accepts is deleted at once | privacy, section 6 | Backend: `PushService.sendToUser` deletes `DeviceNotRegistered` devices |
 
 ## Preview locally
 
